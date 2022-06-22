@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductsService} from "../../services/products.service";
-import {Product} from "../../modele/Product.modele";
-import {Observable, of} from "rxjs";
-import {catchError, map, startWith} from "rxjs/operators";
-import {AppDataState, DataStateEnum} from "../../state/product.state";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from "../../services/products.service";
+import { Product } from "../../modele/Product.modele";
+import { Observable, of } from "rxjs";
+import { catchError, map, startWith } from "rxjs/operators";
+import { AppDataState, DataStateEnum } from "../../state/product.state";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -12,64 +12,67 @@ import {Router} from "@angular/router";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-products$:Observable<AppDataState<Product[]>>|null=null;
-readonly DataStateEnum=DataStateEnum;
+  products$: Observable<AppDataState<Product[]>> | null = null;
+  readonly DataStateEnum = DataStateEnum;
   seached?: string;
-  constructor(private productsService:ProductsService,private router:Router) { }
+  constructor(private productsService: ProductsService,
+    private router: Router) { }
 
   ngOnInit(): void {
 
   }
-
+  onActionEvent($event: any) {
+    console.log("fait bravo");
+  }
   onGetAllProduct() {
-    this.products$=this.productsService.getAllProducts()
+    this.products$ = this.productsService.getAllProducts()
       .pipe(
-        map(data=>({DataState:DataStateEnum.LOADED,data:data})
-  ),
-        startWith({DataState:DataStateEnum.LOADING}),
-        catchError(err => of({DataState:DataStateEnum.ERROR,errorMessage:err.message})));
+        map(data => ({ DataState: DataStateEnum.LOADED, data: data })
+        ),
+        startWith({ DataState: DataStateEnum.LOADING }),
+        catchError(err => of({ DataState: DataStateEnum.ERROR, errorMessage: err.message })));
   }
 
   onGetSelectedProducts() {
-    this.products$=this.productsService.getSelectedProducts()
+    this.products$ = this.productsService.getSelectedProducts()
       .pipe(
-        map(data=>({DataState:DataStateEnum.LOADED,data:data})
+        map(data => ({ DataState: DataStateEnum.LOADED, data: data })
         ),
-        startWith({DataState:DataStateEnum.LOADING}),
-        catchError(err => of({DataState:DataStateEnum.ERROR,errorMessage:err.message})));
+        startWith({ DataState: DataStateEnum.LOADING }),
+        catchError(err => of({ DataState: DataStateEnum.ERROR, errorMessage: err.message })));
 
   }
 
   onGetAvallableProducts() {
-    this.products$=this.productsService.getAvallableProducts()
+    this.products$ = this.productsService.getAvallableProducts()
       .pipe(
-        map(data=>({DataState:DataStateEnum.LOADED,data:data})
+        map(data => ({ DataState: DataStateEnum.LOADED, data: data })
         ),
-        startWith({DataState:DataStateEnum.LOADING}),
-        catchError(err => of({DataState:DataStateEnum.ERROR,errorMessage:err.message})));
+        startWith({ DataState: DataStateEnum.LOADING }),
+        catchError(err => of({ DataState: DataStateEnum.ERROR, errorMessage: err.message })));
 
   }
 
   onSearch(dataForm: any) {
     console.log(this.productsService.searchProducts(dataForm));
-    this.products$=this.productsService.searchProducts(dataForm.keyword)
+    this.products$ = this.productsService.searchProducts(dataForm.keyword)
       .pipe(
-        map(data=>({DataState:DataStateEnum.LOADED,data:data})
+        map(data => ({ DataState: DataStateEnum.LOADED, data: data })
         ),
-        startWith({DataState:DataStateEnum.LOADING}),
-        catchError(err => of({DataState:DataStateEnum.ERROR,errorMessage:err.message})));
+        startWith({ DataState: DataStateEnum.LOADING }),
+        catchError(err => of({ DataState: DataStateEnum.ERROR, errorMessage: err.message })));
 
 
 
   }
 
   onGetTest() {
-    this.products$=this.productsService.getTestProduct("Mon")
+    this.products$ = this.productsService.getTestProduct("Mon")
       .pipe(
-        map(data=>({DataState:DataStateEnum.LOADED,data:data})
+        map(data => ({ DataState: DataStateEnum.LOADED, data: data })
         ),
-        startWith({DataState:DataStateEnum.LOADING}),
-        catchError(err => of({DataState:DataStateEnum.ERROR,errorMessage:err.message})));
+        startWith({ DataState: DataStateEnum.LOADING }),
+        catchError(err => of({ DataState: DataStateEnum.ERROR, errorMessage: err.message })));
 
 
 
@@ -77,10 +80,10 @@ readonly DataStateEnum=DataStateEnum;
 
 
   onDelete(product: Product) {
-    let v=confirm("Etes vous sur de bien vouloir supprimer ce produit?")
-    if (v==true){
+    let v = confirm("Etes vous sur de bien vouloir supprimer ce produit?")
+    if (v == true) {
       this.productsService.deleteProduct(product)
-        .subscribe(data=>{this.onGetAllProduct()})
+        .subscribe(data => { this.onGetAllProduct() })
     }
 
   }
@@ -95,7 +98,8 @@ readonly DataStateEnum=DataStateEnum;
   }
 
   onNewProduct() {
-  this.router.navigateByUrl("/productadd");
+    this.router.navigateByUrl("/productadd");
   }
+
 }
 

@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 2000,
+      "selected": false,
+      "quantity": 20,
+      "availlable": true
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 3000,
+      "selected": true,
+      "quantity": 100,
+      "availlable": false
+    },
+    {
+      "id": 3,
+      "name": "Scanner",
+      "price": 1450,
+      "selected": true,
+      "quantity": 15,
+      "availlable": true
+    },
+    {
+      "id": 4,
+      "name": "Telephone",
+      "price": 2000,
+      "selected": false,
+      "quantity": 50,
+      "availlable": false
+    },
+    {
+      "id": 5,
+      "name": "Notebook",
+      "price": 3400,
+      "selected": false,
+      "quantity": 100,
+      "availlable": false
+    },
+    {
+      "id": 6,
+      "name": "Lavatrice",
+      "price": 1020,
+      "selected": true,
+      "quantity": 53,
+      "availlable": true
+    },
+    {
+      "id": 7,
+      "name": "MacBook",
+      "price": 189,
+      "selected": false,
+      "quantity": 40,
+      "availlable": true
+    },
+    {
+      "id": 8,
+      "name": "Foglietti",
+      "price": 3000,
+      "selected": true,
+      "quantity": 19,
+      "availlable": false
+    },
+    {
+      "id": 9,
+      "name": "Scanner",
+      "price": 1450,
+      "selected": false,
+      "quantity": 153,
+      "availlable": true
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

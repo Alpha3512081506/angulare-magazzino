@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Computer",
+            "price": 2000,
+            "selected": false,
+            "quantity": 20,
+            "availlable": true
+        },
+        {
+            "id": 2,
+            "name": "Printer",
+            "price": 3000,
+            "selected": true,
+            "quantity": 100,
+            "availlable": false
+        },
+        {
+            "id": 3,
+            "name": "Scanner",
+            "price": 1450,
+            "selected": true,
+            "quantity": 15,
+            "availlable": true
+        },
+        {
+            "id": 4,
+            "name": "Computer",
+            "price": 2000,
+            "selected": false,
+            "quantity": 20,
+            "availlable": true
+        },
+        {
+            "id": 5,
+            "name": "Printer",
+            "price": 3000,
+            "selected": true,
+            "quantity": 100,
+            "availlable": false
+        },
+        {
+            "id": 6,
+            "name": "Scanner",
+            "price": 1450,
+            "selected": true,
+            "quantity": 15,
+            "availlable": true
+        }
+    ]
+}

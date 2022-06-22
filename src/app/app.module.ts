@@ -7,13 +7,15 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CategoryComponent } from './components/category/category.component';
 import { LocalisationComponent } from './components/localisation/localisation.component';
 import { IncomeComponent } from './components/income/income.component';
 import { AddProductComponent } from './components/product/add-product/add-product.component';
 import { AddLocationComponent } from './components/localisation/add-location/add-location.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { ProductPracticeComponent } from './product-practice/product-practice.component';
+import { NavigationComponent } from './components/product/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,16 @@ import { AddCategoryComponent } from './components/category/add-category/add-cat
     IncomeComponent,
     AddProductComponent,
     AddLocationComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ProductPracticeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

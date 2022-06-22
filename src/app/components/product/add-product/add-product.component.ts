@@ -7,21 +7,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  productFormGroup?: FormGroup;
+  productFormGroup!: FormGroup;
   protected submitted: boolean = false;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.productFormGroup = this.fb.group({
-      productId: [''],
-      productName: [''],
-      category: [''],
-      location: [''],
-      currentQuantity: [''],
-      alertQuantity: [''],
-      customField1: [''],
-      customField: [''],
-      createdAt: [],
+      " productId": [''],
+      "productName": [''],
+      "category": [''],
+      "location": [''],
+      "currentQuantity": [''],
+      "alertQuantity": [''],
+      "customField1": [''],
+      "customField": [''],
+      "createdAt": [],
 
     })
   }
